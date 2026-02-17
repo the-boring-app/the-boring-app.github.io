@@ -28,13 +28,37 @@
       margin-bottom: 2rem;
       color: #ebe6e0;
     }
+    h2 {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      color: #ebe6e0;
+    }
     p {
       font-size: 0.9rem;
       color: #8c918c;
-      max-width: 280px;
+      max-width: 320px;
       text-align: center;
       line-height: 1.5;
       margin-bottom: 2rem;
+    }
+    .privacy {
+      max-width: 320px;
+      text-align: left;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid #2a2a2a;
+    }
+    .privacy p {
+      text-align: left;
+      margin-bottom: 1rem;
+    }
+    .privacy ul {
+      font-size: 0.9rem;
+      color: #8c918c;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      padding-left: 1.25rem;
     }
     a {
       color: #7a9985;
@@ -51,5 +75,22 @@
   <p>A minimal app for short boredom breaks. Tap one button, set a timer, let your mind rest.</p>
   <!-- Replace YOUR_APP_ID with your App Store app ID (e.g. 1234567890) -->
   <a href="https://apps.apple.com/app/idYOUR_APP_ID">Download on the App Store</a>
-  </body>
+
+  <section class="privacy">
+    <h2>Privacy Policy</h2>
+    <p style="color: #8c918c; font-size: 0.85rem; margin-bottom: 0.5rem;">Effective: February 16, 2026</p>
+    <p>The Boring App collects <strong>zero personal information</strong>.</p>
+    <ul>
+      <li>No data tracking</li>
+      <li>No analytics</li>
+      <li>No device identifiers</li>
+      <li>No crash reports</li>
+      <li>No network requests</li>
+      <li>No storage beyond timer state</li>
+    </ul>
+    <p>Your usage is completely private. All functionality happens locally on your device.</p>
+    <p>Contact: <a href="mailto:theboringapp@example.com">theboringapp@example.com</a></p>
+    <p style="font-size: 0.85rem; margin-bottom: 0;">Last updated: February 16, 2026</p>
+  </section>
+</body>
 </html>
