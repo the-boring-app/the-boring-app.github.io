@@ -44,11 +44,12 @@
     }
     a {
       color: #7a9985;
-      text-decoration: none;
+      text-decoration: underline;
+      text-underline-offset: 2px;
       font-size: 0.95rem;
     }
     a:hover {
-      text-decoration: underline;
+      color: #8fb89a;
     }
 
     /* Tabs */
@@ -99,6 +100,12 @@
       margin-bottom: 1rem;
       padding-left: 1.25rem;
     }
+    .tab-content.boredom {
+      text-align: left;
+    }
+    .tab-content.boredom p {
+      text-align: left;
+    }
   </style>
 </head>
 <body>
@@ -106,12 +113,22 @@
 
   <div class="tabs">
     <button class="tab-btn active" data-tab="about">About</button>
+    <button class="tab-btn" data-tab="boredom">The Importance of Boredom</button>
     <button class="tab-btn" data-tab="privacy">Privacy Policy</button>
   </div>
 
   <div id="about" class="tab-content active">
-    <p>in a world of constant input, boredom gives your mind room to breathe and think.</p>
-    <a href="https://apps.apple.com/us/app/the-boring-app/id6759265800">Download on the App Store</a>
+    <p>A minimal app for short boredom breaks. Tap one button, set a timer, let your mind rest.</p>
+    <!-- Replace YOUR_APP_ID with your App Store app ID (e.g. 1234567890) -->
+    <a href="https://apps.apple.com/app/idYOUR_APP_ID">Download on the App Store</a>
+  </div>
+
+  <div id="boredom" class="tab-content boredom">
+    <p>In a world that fills almost every pause with notifications and content, feeling bored can seem like something to avoid at all costs. But some research suggests that gentle, manageable boredom and quiet downtime <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10342197/">may give the mind space to shift into a different mode</a>.</p>
+    <p>Experimental work has found that people who do a deliberately boring task before a creativity exercise can go on to generate more ideas and more useful responses than those who skip the boring part, suggesting that <a href="https://clok.uclan.ac.uk/22263/1/22263%20Does%2520being%2520bored%2520make%2520us%2520more%2520creativeV2.pdf">boredom can sometimes prime certain kinds of creative thinking</a>. A broader review of boredom research also notes that <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10342197/">moderate boredom may nudge people to explore new interests, reflect on their values, or look for more meaningful activities</a>.</p>
+    <p>Brain‑imaging studies point in a similar direction. When we are not focused on a specific task, a set of regions called the &ldquo;default mode network&rdquo; becomes active and communicates as a network during resting states, rather than switching completely off. This resting‑state activity has been <a href="https://www.pnas.org/doi/10.1073/pnas.0135058100">linked with daydreaming, remembering, and imagining the future</a>.</p>
+    <p>Clinical organizations also emphasize the value of simple downtime for overall brain health, noting that <a href="https://health.clevelandclinic.org/why-downtime-is-essential-for-brain-health">regular breaks and moments of mental rest can support mood, performance, and the ability to pay attention</a>.</p>
+    <p>The boring app doesn&rsquo;t make medical or psychological promises, and it isn&rsquo;t a treatment tool. It&rsquo;s simply a way to create small pockets of intentional, low‑stimulation time. How those moments feel and what they open up will naturally be different for each person.</p>
   </div>
 
   <div id="privacy" class="tab-content privacy">
