@@ -42,24 +42,6 @@
       line-height: 1.5;
       margin-bottom: 2rem;
     }
-    .privacy {
-      max-width: 320px;
-      text-align: left;
-      margin-top: 3rem;
-      padding-top: 2rem;
-      border-top: 1px solid #2a2a2a;
-    }
-    .privacy p {
-      text-align: left;
-      margin-bottom: 1rem;
-    }
-    .privacy ul {
-      font-size: 0.9rem;
-      color: #8c918c;
-      line-height: 1.6;
-      margin-bottom: 1rem;
-      padding-left: 1.25rem;
-    }
     a {
       color: #7a9985;
       text-decoration: none;
@@ -68,16 +50,71 @@
     a:hover {
       text-decoration: underline;
     }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      gap: 0;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid #2a2a2a;
+    }
+    .tab-btn {
+      background: none;
+      border: none;
+      color: #8c918c;
+      font-size: 0.95rem;
+      font-family: inherit;
+      padding: 0.6rem 1.25rem;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .tab-btn:hover {
+      color: #ebe6e0;
+    }
+    .tab-btn.active {
+      color: #7a9985;
+      border-bottom-color: #7a9985;
+    }
+    .tab-content {
+      display: none;
+      max-width: 320px;
+      text-align: center;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .tab-content.privacy {
+      text-align: left;
+    }
+    .tab-content.privacy p {
+      text-align: left;
+      margin-bottom: 1rem;
+    }
+    .tab-content.privacy ul {
+      font-size: 0.9rem;
+      color: #8c918c;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      padding-left: 1.25rem;
+    }
   </style>
 </head>
 <body>
   <h1>the boring app.</h1>
-  <p>A minimal app for short boredom breaks. Tap one button, set a timer, let your mind rest.</p>
-  <!-- Replace YOUR_APP_ID with your App Store app ID (e.g. 1234567890) -->
-  <a href="https://apps.apple.com/app/idYOUR_APP_ID">Download on the App Store</a>
 
-  <section class="privacy">
-    <h2>Privacy Policy</h2>
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="about">About</button>
+    <button class="tab-btn" data-tab="privacy">Privacy Policy</button>
+  </div>
+
+  <div id="about" class="tab-content active">
+    <p>in a world of constant input, boredom gives your mind room to breathe and think.</p>
+    <a href="https://apps.apple.com/us/app/the-boring-app/id6759265800">Download on the App Store</a>
+  </div>
+
+  <div id="privacy" class="tab-content privacy">
     <p style="color: #8c918c; font-size: 0.85rem; margin-bottom: 0.5rem;">Effective: February 16, 2026</p>
     <p>The Boring App collects <strong>zero personal information</strong>.</p>
     <ul>
@@ -91,6 +128,17 @@
     <p>Your usage is completely private. All functionality happens locally on your device.</p>
     <p>Contact: <a href="mailto:CappyLaboratory@protonmail.com">CappyLaboratory@protonmail.com</a></p>
     <p style="font-size: 0.85rem; margin-bottom: 0;">Last updated: February 16, 2026</p>
-  </section>
+  </div>
+
+  <script>
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.tab).classList.add('active');
+      });
+    });
+  </script>
 </body>
 </html>
